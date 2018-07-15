@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="https://rawgit.com/NastyaNasalevich/Templates-for-chat/master/main.css">
+    <link rel="stylesheet" href="https://code.jquery.com/qunit/qunit-2.6.1.css">
+</head>
+<body>
+    <div id="qunit">
+    </div>
+    <div class="dashboard-main">
+        <div>
+            <p style="margin-left: 76px">Oprator's Dashboards</p>
+            <input placeholder="Filter" id="dashboard-filter" class="dashboard-filter"/>
+                <select size="1" title="Sort user" id="dashboard-sorter" class="dashboard-sorter">
+                    <option selected>Sort By</option>
+                    <option>User Name</option>
+                    <option>Online</option>
+                    <option>Chat state</option>
+                </select>
+                <p></p>
+            <div id="dashboard-users-list" class="dashboard-users-list"></div>
+        </div>
+        <img src="../img/lindy.jpg" class="dashboard-picture" id="dashboard-picture">
+        <div id="dashboard-work-place" class="dashboard-work-place" hidden>
+            <button id="dashboard-close" style="right: 6px; position: absolute">X</button>
+            <p style="margin-left: 26px" id="active">Active: </p>
+            <div id="dashboard-chat-container" class="dashboard-chat-container" >
+                <div class="dashboard-chat-name">Chat</div>
+                <div id="dashboard-history-panel" class="dashboard-history-panel"></div>
+                <textarea id="dashboard-chat-textarea" class="dashboard-chat-textarea" placeholder = 'Message...'></textarea>
+                <button id="dashboard-chat-button" class="dashboard-chat-button">Send</button>
+            </div>
+            <div class="dashboard-control" >
+                <div class="dashboard-control-name">Control</div>
+            </div>
+        </div>
+        <p></p>
+    </div>
+
+<script src="https://code.jquery.com/qunit/qunit-2.6.1.js" type="text/javascript"></script>
+<script src="https://rawgit.com/NastyaNasalevich/js--touchsoft/task5/task-05/NastyaNasalevich/app/js/dashboard/panelOfUsers.js"></script>
+<script src="https://rawgit.com/NastyaNasalevich/js--touchsoft/task5/task-05/NastyaNasalevich/app/js/dashboard/operatorsChat.js"></script>
+<script src="https://rawgit.com/NastyaNasalevich/js--touchsoft/task5/task-05/NastyaNasalevich/app/js/dashboard/filter.js"></script>
+<script src="https://rawgit.com/NastyaNasalevich/js--touchsoft/task5/task-05/NastyaNasalevich/app/js/dashboard/sorter.js"></script>
+<script src="https://rawgit.com/NastyaNasalevich/js--touchsoft/task5/task-05/NastyaNasalevich/app/js/auxiliaryFunction/removeChildren.js"></script>
+<script src="https://rawgit.com/NastyaNasalevich/js--touchsoft/task5/task-05/NastyaNasalevich/app/js/auxiliaryFunction/sendRequestToDatabase.js"></script>
+<script src="https://rawgit.com/NastyaNasalevich/js--touchsoft/task5/task-05/NastyaNasalevich/app/js/auxiliaryFunction/message.js"></script>
+<script src="https://rawgit.com/NastyaNasalevich/js--touchsoft/task5/task-05/NastyaNasalevich/app/js/dashboard/Qunit.dashboard.js" type="text/javascript"></script>
+</body>
+</html>
