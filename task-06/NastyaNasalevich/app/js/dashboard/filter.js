@@ -7,10 +7,6 @@ var filter = (function createFilter() {
     Filter.prototype.filterUsers = function filterUsers(value, usersArray) {
         var filterValue = value.toLowerCase();
     
-        if (filterValue === '') {
-            return;
-        }
-    
         usersArray.forEach(function hideAllUsers(userContainer) {
             userContainer.hidden = false;
         });

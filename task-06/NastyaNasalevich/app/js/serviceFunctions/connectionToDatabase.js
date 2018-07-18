@@ -103,7 +103,7 @@ var connectionToDatabase = (function createConnectionToDatabase () {
                 }  
 
                 var message = createMessageObject(messageFromResponse);
-                operatorsChat.showMessage(message);
+                message.showMessage();
             
                 subscribeToUsersMessagesChanges();
             }
@@ -119,7 +119,7 @@ var connectionToDatabase = (function createConnectionToDatabase () {
         xhr.onreadystatechange = function() { 
             
             if (this.readyState == 3 && this.status == 200 && this.responseText.length > 0) {
-                var userListFromDB;
+                var updatedUserList;
                 var responseText = this.responseText;
                 var newLastData = getLastDataFromLongPolling(responseText);
                 
@@ -127,8 +127,8 @@ var connectionToDatabase = (function createConnectionToDatabase () {
                     return;
                 }
 
-                userListFromDB = getChangedListOfUserFromLongPolling(newLastData, responseText);
-                panelOfUsers.updateUserList(userListFromDB);
+                updatedUserList = getChangedListOfUserFromLongPolling(newLastData, responseText);
+                panelOfUsers.updateUserList(updatedUserList);
                 subscribeToUsersChanges();
             }
         }
