@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chat configuration</title>
+</head>
+<body>
+<div id="Chat configuration">
+    <h1>Chat configuration</h1>
+    <div id="Chat title">
+        <p>Chat title
+            <input id="inputTitle"/></p>
+    </div>
+    <div id="Bot name">
+        <p>Bot name
+            <input id="inputBotName"/></p>
+    </div>
+    <div id="Chat URL">
+        <p>Chat URL
+            <input id="inputChatURL"/></p>
+    </div>
+    <div id="CSS Class">
+        <p>CSS Class
+            <input id="inputCSS"/></p>
+    </div>
+    <div id="PositionSelect">
+        <p>Position
+            <select id="selectPosition">
+                <option>right</option>
+                <option>left</option>
+            </select>
+        </p>
+    </div>
+    <div id="UI">
+        UI
+        <ul>
+            <p><input type="checkbox" id="inputAllowMinimize">
+                Allow to minimize
+            </p>
+            <p><input type="checkbox" id="inputAllowDrag">
+                Allow drag
+            </p>
+            <p><input type="checkbox" id="inputShowDataTime">
+                Require name
+            </p>
+            <p><input type="checkbox" id="inputRequireName">
+                Show data/time
+            </p>
+        </ul>
+    </div>
+    <form id="Network">
+        Network
+        <input type="radio" name="Network" value="XHR">XHR
+        <input type="radio" name="Network" value="fetch">fetch
+    </form>
+    <div id="Use code">
+        <p>Use next code:<br/>
+            <ul><span><</span>script src="chat.js"><span><</span>/script> <br/>
+                <span><</span>script> <br/>
+                (function () {<br>
+                new Chat({ <br/>
+                <div id='title'></div>
+                <script> window.document.getElementById('inputTitle').addEventListener('blur', function () {
+                    window.document.getElementById('title').innerHTML = "title: ".concat(window.document.getElementById('inputTitle').value);
+                })</script>
+                <div id='botName'></div>
+                <script> window.document.getElementById('inputBotName').addEventListener('blur', function () {
+                    window.document.getElementById('botName').innerHTML = "botName: ".concat(window.document.getElementById('inputBotName').value);
+                })</script>
+                <div id='chatUrl'></div>
+                <script> window.document.getElementById('inputChatURL').addEventListener('blur', function () {
+                    window.document.getElementById('chatUrl').innerHTML = "chatUrl: ".concat(window.document.getElementById('inputChatURL').value);
+                })</script>
+                <div id='cssClass'></div>
+                <script> window.document.getElementById('inputCSS').addEventListener('blur', function () {
+                    window.document.getElementById('cssClass').innerHTML = "cssClass: ".concat(window.document.getElementById('inputCSS').value);
+                })</script>
+                <div id='position'></div>
+                <script> window.document.getElementById('selectPosition').addEventListener('blur', function () {
+                    window.document.getElementById('position').innerHTML = "position: ".concat(window.document.getElementById('selectPosition').value);
+                })</script>
+                <div id='allowMinimize'></div>
+                <script> window.document.getElementById('inputAllowMinimize').addEventListener('click', function () {
+                    var checked = false;
+                    if (window.document.getElementById('inputAllowMinimize').checked) {
+                        checked = true;
+                    }
+                    window.document.getElementById('allowMinimize').innerHTML = "allowMinimize: ".concat(checked);
+                })</script>
+                <div id='allowDrag'></div>
+                <script> window.document.getElementById('inputAllowDrag').addEventListener('click', function () {
+                    var checked = false;
+                    if (window.document.getElementById('inputAllowDrag').checked) {
+                        checked = true;
+                    }
+                    window.document.getElementById('allowDrag').innerHTML = "allowDrag: ".concat(checked);
+                })</script>
+                <div id='showDataTime'></div>
+                <script> window.document.getElementById('inputShowDataTime').addEventListener('click', function () {
+                    var checked = false;
+                    if (window.document.getElementById('inputShowDataTime').checked) {
+                        checked = true;
+                    }
+                    window.document.getElementById('showDataTime').innerHTML = "showDataTime: ".concat(checked);
+                })</script>
+                <div id='requireName'></div>
+                <script> window.document.getElementById('inputRequireName').addEventListener('click', function () {
+                    var checked = false;
+                    if (window.document.getElementById('inputRequireName').checked) {
+                        checked = true;
+                    }
+                    window.document.getElementById('requireName').innerHTML = "requireName: ".concat(checked);
+                })</script>
+                <div id='requests'></div>
+                <script> window.document.getElementById('Network').addEventListener('click', function () {
+                        for (var i = 0, length = window.document.getElementById('Network').length; i < length; i++) {
+                            if (window.document.getElementById('Network')[i].checked) {
+                                window.document.getElementById('requests').innerHTML = "requests: ".concat(window.document.getElementById('Network')[i].value);
+                                break;
+                            }
+                        }
+                    }
+                    )</script>
+                });<br/>
+                })();<br/>
+                <span><</span>/script>
+        <p> </ul>
+    </div>
+</div>
+</body>
+</html>
